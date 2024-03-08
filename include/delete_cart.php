@@ -20,6 +20,6 @@
     $db->query(sprintf("UPDATE `products` SET `count`='%s' WHERE `product_id`='%s'",
     ++$order['pcount'], $order['product_id']));
 
-    return header("Location: ../Basket.php?message=Товар удалён из корзины");
+    return header("Location: ../Basket.php");
 
 ?>
