@@ -47,7 +47,9 @@
             <div class="center__block">
 
                 <div class="left">
-                    <form action="./include/login.php" method="POST">
+                    <form action="./include/login.php" method="POST" id="form-login">
+                        <div class="errors-block errors-validation-block disp-none mb-4"></div>
+
                         <div class="inp-wrapper">
                             <input type="text" class="inp-field" name="login" placeholder="Логин">
                         </div>
@@ -80,5 +82,7 @@
     <?php
         include "./include/footer.php";
     ?>
+
+    <script src="assest/JS/validation_login.js"></script>
 </body>
 </html>
