@@ -106,6 +106,7 @@ a.last__nav {
 
 .title_cart {
     margin-left: 20px;
+    width: 300px;
 }
 
 .title_link-cart {
@@ -198,8 +199,7 @@ a.last__nav {
     transition: opacity 0.25s ease;
     border-radius: 10px;
     margin-top: 20px;
-    padding: 30px 50px 10px 50px;
-    height: 50%;
+    padding: 30px 20px 10px 50px;
     width: 100%;
     display: flex;
 }
@@ -234,4 +234,5 @@ a.last__nav {
 
 .block__total_price-cart {
     display: block;
+    max-width: 268px;
 }

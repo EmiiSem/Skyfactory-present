@@ -3,9 +3,9 @@
 
     require "include/connect.php";
 
-    // if(!isset($_SESSION['user']['id'])) {
-    //     return header("Location: index.php?message=Вы не авторизированы");
-    // }
+    if(!isset($_SESSION['user']['id'])) {
+        return header("Location: index.php?message=Вы не авторизированы");
+    }
 
     $sql = sprintf("SELECT `order_id`, `product_id`, `orders`.`count`, `name`, `price`, `path` FROM `orders` INNER JOIN `products` USING(`product_id`) WHERE `user_id`='%s'", $_SESSION['user']['id']);
     $result = $db->query($sql);
@@ -65,6 +65,10 @@
         </div>', $row['price']);
     }
 
+    $countValueStr .= sprintf('
+    <p class="cart_sub">%s товаров</p>
+    ', $totalCount);
+
     if($products == "") {
         $products = '<h1 class="products_none">Товары отсутствуют</h1>';
     }
@@ -75,6 +79,10 @@
             <p class="price-total_title">Итого</p>
             <p class="price-total">0 руб.</p>
         </div>';
+    }
+
+    if($countValueStr == "") {
+        $countValueStr = '<p class="cart_sub">0 товаров</p>';
     }
 ?>
 
@@ -123,14 +131,16 @@
             <h1 class="page__title">Корзина</h1>
 
             <div class="cart__mine-info">
-                <p class="cart_sub">1 товар</p>
+                <?= $countValueStr ?>
                 <p class="clear_sub">Очистить всё</p>
             </div>
 
             <!-- Основной блок товара -->
             <div class="block__main-cart">
                 <!-- начало левого блока -->
-                <?= $products; ?>
+                <div>
+                    <?= $products; ?>
+                </div>
                 <!-- конец левого блока -->
 
                 <!-- Начало правого блока -->
