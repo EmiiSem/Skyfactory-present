@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     require "connect.php";
 
     $id = $_GET['id'];
@@ -15,7 +17,7 @@
         $_SESSION['user']['id'], $order['product_id']));
     }
 
-    $db->query(sprintf("UPDATE `products` SET `count`='%s' AND `product_id`='%s'",
+    $db->query(sprintf("UPDATE `products` SET `count`='%s' WHERE `product_id`='%s'",
     ++$order['pcount'], $order['product_id']));
 
     return header("Location: ../Basket.php?message=Товар удалён из корзины");
