@@ -1,5 +1,25 @@
 <?php
     session_start();
+
+    include "./include/connect.php";
+
+    $userId = $_SESSION['user']['id'];
+
+    $sql = sprintf("SELECT `id`, `fio`, `email`, `login` FROM `users` WHERE `id`='%s'", $userId);
+    $result = $db->query($sql);
+
+    // Проверка наличия данных и вывод информации
+    if($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $fio = $row["fio"];
+            $login = $row["login"];
+            $email = $row["email"];
+        }
+    } else {
+        $_SESSION['message'] = 'Вы не авторизированы!';
+        return header("Location: Login_page.php");
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -89,16 +109,12 @@
 
                     <div class="general-info">
                         <p>
-                            <strong>Имя</strong>
-                            <input type="text" name="name" value="">
-                        </p>
-                        <p>
-                            <strong>Фамилия</strong>
-                            <input type="text" name="surname" value="">
-                        </p>
-                        <p>
                             <strong>E-mail</strong>
-                            <input type="email" name="E-mail" value="">
+                            <input type="email" name="E-mail" value="<?= $email; ?>">
+                        </p>
+                        <p>
+                            <strong>ФИО</strong>
+                            <input type="text" name="fio" value="<?= $fio; ?>">
                         </p>
                     </div>
 

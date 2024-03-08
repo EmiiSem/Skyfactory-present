@@ -3,18 +3,21 @@
 
     include "./include/connect.php";
 
-    $sql = "SELECT fio, email, login FROM users WHERE id";
+    $userId = $_SESSION['user']['id'];
+
+    $sql = sprintf("SELECT `id`, `fio`, `email`, `login` FROM `users` WHERE `id`='%s'", $userId);
     $result = $db->query($sql);
 
     // Проверка наличия данных и вывод информации
-    if ($result->num_rows > 0) {
+    if($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             $fio = $row["fio"];
             $login = $row["login"];
             $email = $row["email"];
         }
     } else {
-        echo "Пользователь не найден";
+        $_SESSION['message'] = 'Вы не авторизированы!';
+        return header("Location: Login_page.php");
     }
 ?>
 
