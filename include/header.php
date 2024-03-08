@@ -1,3 +1,25 @@
+<?php
+    if(isset($_SESSION['user']['id'])) {
+        require "connect.php";
+
+        $sql = sprintf("SELECT `order_id`, `product_id`, `orders`.`count`, `name`, `price`, `path` FROM `orders` INNER JOIN `products` USING(`product_id`) WHERE `user_id`='%s'", $_SESSION['user']['id']);
+        $result = $db->query($sql);
+
+        $totalCount = 0;
+
+        if($row = $result->fetch_assoc()) {
+            $count = $row["count"];
+            $totalCount += $count;
+
+            $cartNum .= sprintf('
+            <div class="cart__num" id="cart_num">%s</div>
+            ', $totalCount);
+        } elseif($cartNum == "") {
+            $cartNum = '<div class="cart__num" id="cart_num">0</div>';
+        }
+    }
+?>
+
 <header class="header col-12">
         <div class="navbar container">
             <a href="./index.php" class="logo-link logo_png">
@@ -30,10 +52,9 @@
                     <li class="nav__item">
                         <a href="#" class="nav__link">
                             <div class="form__search">
-                                <!-- <form action="#" method="get"> -->
-                                    <input type="text" class="text__search" name="ser" placeholder="Поиск товара..." value="" autocomplete="off">
-                                    <!-- <input type="button" class="buttonSearch" onclick="FindOnPage('text-to-find'); return false;" value="Искать"/> -->
-                                <!-- </form> -->
+                                <form action="#" method="POST">
+                                    <input type="text" class="text__search" name="search" placeholder="Поиск товара..." autocomplete="off">
+                                </form>
                             </div>
                         </a>
                     </li>
@@ -52,17 +73,10 @@
                         <li class="nav__item"><a class="nav__link lk_link" href="./Basket.php">
                             <button class="cart" id="cart">
                                 <img class="cart__image" src="./assest/img/shopping_cart.svg" alt="Cart" />
-                                <div class="cart__num" id="cart_num">0</div>
+                                <?= $cartNum ?>
                             </button>
                         </a></li>
                     <? } ?>
-                    <!-- <li class="nav__item">
-                        <button class="cart" id="cart">
-                            <img class="cart__image" src="./assest/img/shopping_cart.svg" alt="Cart" />
-                            <div class="cart__num" id="cart_num">0</div>
-                        </button>
-                    </li> -->
-
                 </ul>
             </nav>
             
