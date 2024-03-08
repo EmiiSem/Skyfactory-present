@@ -1,0 +1,7 @@
+User-agent: *
+Crawl-delay: 5
+Host: http://skyfactory.j95202uf.beget.tech/
+Disallow: /Contact_page.php
+Disallow: /Personal_account_page.php
+Disallow: /Personal_account_page_dop.php
+Sitemap: http://skyfactory.j95202uf.beget.tech/sitemap.xml

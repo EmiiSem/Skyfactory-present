@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule ^2$ Admin_page.php [L]
