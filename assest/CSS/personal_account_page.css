@@ -299,3 +299,21 @@ a.last__nav {
     margin-top: 42px;
 }
 
+
+/* Страница списка заказов */
+.card_order {
+    background-color: #FFF;
+    width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.shopping-list {
+    margin-top: 40px;
+}
+
+.products_none {
+    color: #FFF;
+    margin-top: 20px;
+}
