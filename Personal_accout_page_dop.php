@@ -12,7 +12,6 @@
     if($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             $fio = $row["fio"];
-            $login = $row["login"];
             $email = $row["email"];
         }
     } else {
@@ -28,7 +27,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Личный кабинет</title>
+    <title>Личный кабинет - Персональный раздел</title>
     <meta name="robots" content="noindex">
     <meta name="description" content="Дополнительная страница личного кабинета интернет магазина телескопов SkyFactory">
     <link rel="stylesheet" href="assest/CSS/personal_account_page.css">
@@ -77,15 +76,15 @@
                         <ul class="menu__list list">
 
                             <li class="menu__item menu__item-first">
-                                <a href="./Personal_accout_page.php" class="menu__link link-sub-1">Общая информация</a>
+                                <a href="Personal_accout_page.php" class="menu__link link-sub-1">Общая информация</a>
                             </li>
 
                             <li class="menu__item">
-                                <a href="./Personal_accout_page_dop.php" class="menu__link link-sub-1">Персональная информация</a>
+                                <a href="Personal_accout_page_dop.php" class="menu__link link-sub-1">Персональная информация</a>
                             </li>
 
                             <li class="menu__item">
-                                <a href="#" class="menu__link link-sub-1">Список заказов</a>
+                                <a href="Personal_shoplist_page.php" class="menu__link link-sub-1">Список заказов</a>
                             </li>
 
                             <li class="menu__item menu__item-unlock">

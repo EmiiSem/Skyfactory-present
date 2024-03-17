@@ -73,15 +73,15 @@
                         <ul class="menu__list list">
 
                             <li class="menu__item">
-                                <a href="./Personal_accout_page.php" class="menu__link">Общая информация</a>
+                                <a href="Personal_accout_page.php" class="menu__link">Общая информация</a>
                             </li>
 
                             <li class="menu__item">
-                                <a href="./Personal_accout_page_dop.php" class="menu__link link-sub-1">Персональная информация</a>
+                                <a href="Personal_accout_page_dop.php" class="menu__link link-sub-1">Персональная информация</a>
                             </li>
 
                             <li class="menu__item">
-                                <a href="#" class="menu__link link-sub-1">Список заказов</a>
+                                <a href="Personal_shoplist_page.php" class="menu__link link-sub-1">Список заказов</a>
                             </li>
 
                             <li class="menu__item menu__item-unlock">
