@@ -10,7 +10,7 @@
 
     // Проверка наличия данных и вывод информации
     if($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
+        if($row = $result->fetch_assoc()) {
             $fio = $row["fio"];
             $login = $row["login"];
             $email = $row["email"];
@@ -20,8 +20,11 @@
         return header("Location: Login_page.php");
     }
 
+    $sql = "SELECT * FROM `orders` WHERE `product_id`";
+    $product = $db->query($sql)->fetch_assoc();
+
     // Получение данных заказанных товаров
-    $sql = sprintf("SELECT * FROM `orders` WHERE `user_id`='%s' AND `number` IS NOT NULL AND `product_id`=0 ORDER BY `created_at` DESC", $_SESSION['user']['id']);
+    $sql = sprintf("SELECT * FROM `orders` WHERE `user_id`='%s' AND `number` IS NOT NULL AND `product_id`='%s' ORDER BY `created_at` DESC", $_SESSION['user']['id'], $product['product_id']);
     $result = $db->query($sql);
 
     $orders = "";
@@ -31,7 +34,7 @@
         $orders .= sprintf('
         <div class="shopping-list">
             <div class="card_order">
-                <h6><b>Заказ от %</b></h6>
+                <h6><b>Заказ от <br> %s</b></h6>
                 <p>%s</p>
                 <hr class="my-2">
                 %s
@@ -43,8 +46,8 @@
         ', $row['created_at'], $row['number'], $del, $row['status'], $reason, $row['count']);
     }
 
-    if($orders = "") {
-        $orders = '<h4>Список заказов пуст</h4>';
+    if($orders == "") {
+        $orders = '<h4 class="products_none">Список заказов пуст</h4>';
     }
 
 
