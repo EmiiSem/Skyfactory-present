@@ -150,7 +150,7 @@
                         <p class="price-total"><?= $totalPrice ?> руб.</p>
                     </div>
                     <div class="block-inner-btn">
-                        <a href="" class="btn__add-cart">
+                        <a href="include/checkout.php" class="btn__add-cart">
                             <button class="btn__add">Перейти к оформлению</button>
                         </a>
                     </div>
