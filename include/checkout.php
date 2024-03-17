@@ -1,28 +1,29 @@
 <?php
+    session_start();
+
+    if(!isset($_SESSION['user']['id'])) {
+        $_SESSION['message'] = "Вы не авторизированы";
+        header("Location:.../Login_page.php");
+    }
+
     require "connect.php";
 
-    $sql = sprintf("SELECT SUM(orders.`count`) FROM `orders` WHERE `user_id`='%s' AND `number` IS NULL", $_SESSION['user']['id']);
+    $sql = sprintf("SELECT SUM(`count`), `product_id` FROM `orders` WHERE `user_id`='%s'
+    AND `number` IS NULL", $_SESSION["user"]['id']);
 
-    // $sql2 = sprintf("SELECT `product_id` FROM `orders` INNER JOIN `products` USING(`product_id`) WHERE `user_id`='%s'", $_SESSION['user']['id']);
-    // $result = $db->query($sql2);
-
-    // $row = $result->fetch_assoc();
-    // $product = $row['product_id'];
-
-    // if($result == false) {
-    //     die("Ошибка выполнения запроса: " . $db->error);
-    // }
-
-    $chars = '0123456789';
-    $number = substr(str_shuffle($chars), 0, 5);
-    
     $count = $db->query($sql)->fetch_array()[0];
 
-    $db->query(sprintf("INSERT INTO `orders` (`product_id`, `user_id`, `number`, `count`, `status`)
-    VALUES ('%s', '%s', '%s', '%s', 'Новый')", $row['product_id'], $_SESSION['user']['id'], $number, $count));
+    $product = $db->query($sql)->fetch_assoc();
 
-    $db->query(sprintf("DELETE FROM `orders` WHERE `user_id`='%s' AND `number` IS NULL", $_SESSION['user']['id']));
+    // $db->query(sprintf("INSERT INTO `orders`(`product_id`, `user_id`, `number`, `count`, `status`) 
+    // VALUES('%s', '%s', '%s', '%s', 'Новый')", $product['product_id'] , $_SESSION["user"]['id'], rand(1000000000,2000000000), $count));
+    $db->query(sprintf("UPDATE `orders` SET `product_id`='%s', `user_id`='%s', `number`='%s', `count`='%s', `status`='Новый'", $product['product_id'], $_SESSION["user"]['id'], rand(1000000000,2000000000), $count));
 
-    return header("Location: ../Basket.php?message=Заказ оформлен");
+    if($db->affected_rows > 0) {
+        $db->query(sprintf("DELETE FROM `orders` WHERE `user_id`='%s' AND `number` IS NULL",
+        $_SESSION["user"]['id']));
+    }
+
+    return header("Location:../Personal_shoplist_page.php?message=Заказ оформлен");
 
 ?>
