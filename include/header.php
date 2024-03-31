@@ -52,8 +52,8 @@
                     <li class="nav__item">
                         <a href="#" class="nav__link">
                             <div class="form__search">
-                                <form action="#" method="POST">
-                                    <input type="text" class="text__search" name="search" placeholder="Поиск товара..." autocomplete="off">
+                                <form action="./Search_page.php" method="POST">
+                                    <input type="search" class="text__search" name="search" placeholder="Поиск товара..." autocomplete="off">
                                 </form>
                             </div>
                         </a>
