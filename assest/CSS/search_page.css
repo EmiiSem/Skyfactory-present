@@ -1,0 +1,257 @@
+.subpage_nav {
+    margin-top: -2px;
+    margin-left: 60px;
+    color: #FFF;
+}
+
+.breadcrumb-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.75rem;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.breadcrumb-nav li:first-child {
+    padding-left: 0;
+    background: none;
+}
+
+.breadcrumb-nav li {
+    font-weight: 500;
+    margin-left: 20px;
+    font-size: 15px;
+    background: url("../img/arrow.svg") no-repeat 0.25rem 0.125rem/0.375rem;
+    padding-left: 2rem;
+    display: inline;
+}
+
+a.last__nav {
+    pointer-events: none;
+    /* ссылка некликабельная */
+    cursor: default;
+    /* установка курсора в виде стрелки(по умолчанию) */
+    color: #968C8C;
+    font-weight: 600;
+}
+
+.breadcrumb-nav a {
+    color: #FFF;
+}
+/* Меню с ссылками */
+
+.main {
+    background-color: #060918;
+    padding-top: 18px;
+    height: 100%;
+    padding-bottom: 18px;
+}
+
+.page__title {
+    text-align: center;
+    color: #FFF;
+    margin-top: 70px;
+}
+
+.sort {
+    display: flex;
+    margin-left: 4.5rem;
+    margin-bottom: 60px;
+}
+
+.sort a {
+    text-decoration: none !important;
+}
+
+.btn__sort {
+    font-weight: 600;
+    color: #FFF;
+    text-align: center;
+    background-color: #0A9396;
+    padding: .375rem .75rem;
+    font-size: 18px;
+    line-height: 1.5;
+    border-radius: 5px;
+}
+
+.btn__sort:last-child {
+    margin-left: 50px;
+}
+
+.btn__sort:hover {
+    background-color: #216D9E;
+    color: #fff;
+    transition: ease-in 0.5s;
+}
+
+.empty_none {
+    color: #FFF;
+    text-align: center;
+    width: 100%;
+    margin-left: 700px;
+}
+
+
+/* Карточки товаров */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 225px);
+    width: 100%;
+    max-width: 1000px;
+    justify-content: center;
+    justify-items: center;
+    column-gap: 30px;
+    row-gap: 40px;
+    margin: 0 auto auto 4.5rem;
+}
+
+.card {
+    width: 225px;
+    min-height: 350px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    transition: 0.2s;
+    position: relative;
+}
+
+.card .card__label {
+    padding: 4px 8px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: #0A9396;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
+}
+
+.card:hover {
+    box-shadow: 4px 8px 16px rgba(255, 102, 51, 0.2);
+}
+
+.card__top {
+    flex: 0 0 220px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card__image {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.card__image>img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: 0.2s;
+}
+
+.card__image:hover>img {
+    transform: scale(1.1);
+}
+
+.card__bottom {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    padding: 10px;
+}
+
+.card__prices {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.card__price {
+    flex: 0 0 50%;
+}
+
+.card__price:after {
+    content: "₽";
+    margin-left: 4px;
+    position: relative;
+}
+
+.card__price--discount {
+    font-weight: 700;
+    font-size: 19px;
+    color: #414141;
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+
+.card__price--discount::before {
+    content: "Стоимость";
+    font-weight: 400;
+    font-size: 13px;
+    color: #bfbfbf;
+}
+
+.card__title {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 150%;
+    color: #414141;
+}
+
+.card__title:hover {
+    color: #216D9E;
+}
+
+.card__add {
+    display: block;
+    width: 100%;
+    font-weight: 400;
+    font-size: 17px;
+    color: #0A9396;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #0A9396;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: auto;
+}
+
+.card__remove {
+    display: block;
+    width: 100%;
+    font-weight: 400;
+    font-size: 17px;
+    color: #d62240;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #d62240;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: auto;
+}
+
+.card__remove:hover {
+    border: 1px solid #d62240;
+    background-color: #d62240;
+    color: #fff;
+}
+
+.card__add:hover {
+    border: 1px solid #216D9E;
+    background-color: #216D9E;
+    color: #fff;
+}
+
+.cart:hover {
+    transform: scale(1.1);
+}
