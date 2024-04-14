@@ -4,6 +4,47 @@
     include "./include/connect.php";
 
     $products = mysqli_query($db, "SELECT * FROM `products` JOIN `categories` WHERE `products`.category = `categories`.category_id");
+
+    // Функция для разбивки контента на странице
+    function get_products($db, $start, $products_per_page) {
+        $query = "SELECT * FROM `products` JOIN `categories` WHERE `products`.category = `categories`.category_id
+        LIMIT $start, $products_per_page";
+        $products = mysqli_query($db, $query);
+
+        return $products;
+    }
+
+    // Определение кол-ва продуктов на одной странице и текущую страницу
+    $products_per_page = 8; // кол-во записей на странице
+
+    // использование функции intval нужно для преобразования значения к целочисленному типу
+    $current_page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+    $start = ($current_page - 1) * $products_per_page;
+
+    // Изменение запроса к БД, чтобы использовать функцию и параметры пагинации
+    $products = get_products($db, $start, $products_per_page);
+
+    $total_products = 18; // код для получения общего количества продуктов из базы данных;
+
+    $total_pages = ceil($total_products / $products_per_page);
+
+    $pagination = "";
+    for ($i = 1; $i <= $total_pages; $i++) {
+        // Условие, если текущая страница равна выбранной, то подсветить её
+        if($current_page == $i) {
+            $pagination .= "
+                <li class='page-nav__item--active'>
+                    <a class='page-nav__link' href='Catalog_page.php?page=$i'>$i</a>
+                </li>
+            ";
+        } else {
+            $pagination .= "
+                <li class='page-nav__item'>
+                    <a class='page-nav__link' href='Catalog_page.php?page=$i'>$i</a>
+                </li>
+            ";
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -125,21 +166,7 @@
                         -->
                         <div class="page-nav items_pager">
                             <ul class="page-nav__list">
-                                <li class="page-nav__item page-nav__item--active">
-                                    <span class="page-nav__link">1</span>
-                                </li>
-                                <li class="page-nav__item">
-                                    <a href="#" class="page-nav__link">2</a>
-                                </li>
-                                <li class="page-nav__item">
-                                    <a href="#" class="page-nav__link">3</a>
-                                </li>
-                                <li class="page-nav__item">
-                                    <a href="#" class="page-nav__link">4</a>
-                                </li>
-                                <li class="page-nav__item">
-                                    <a href="#" class="page-nav__link">5</a>
-                                </li>
+                                <?= $pagination; ?>
                             </ul>
                         </div>
                         <!-- ./page-nav items_pager -->
