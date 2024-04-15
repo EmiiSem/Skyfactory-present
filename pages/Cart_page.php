@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    include "./include/connect.php";
+    include "../include/connect.php";
 
     $id = @$_GET['id'];
 
@@ -21,11 +21,11 @@
     <title><?= $product['name'] ?></title>
     <meta name="robots" content="">
     <meta name="description" content="В магазине SkyFactory можно купить телескоп Sky-Watcher BK 707AZ2 за 29 797 руб. Качественный и профессиональный телескоп. Доставка по России.">
-    <link rel="stylesheet" href="assest/CSS/cart_page.css">
-    <link rel="stylesheet" href="assest/CSS/header.css">
-    <link rel="stylesheet" href="assest/CSS/footer.css">
-    <link rel="stylesheet" href="assest/CSS/bootstrap.min.css">
-    <link rel="stylesheet" href="assest/CSS/personal_page.css">
+    <link rel="stylesheet" href="../assest/CSS/cart_page.css">
+    <link rel="stylesheet" href="../assest/CSS/header.css">
+    <link rel="stylesheet" href="../assest/CSS/footer.css">
+    <link rel="stylesheet" href="../assest/CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../assest/CSS/personal_page.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
@@ -35,7 +35,7 @@
         Шапка сайта
     -->
     <?php
-        include "./include/header.php";
+        include "../include/header.php";
     ?>
 
 <div class="main">
@@ -43,13 +43,13 @@
             <div class="f1">
                 <div class="subpage_nav">
                     <ul class="breadcrumb-nav">
-                        <li><a href="./index.php" title="Главная">
+                        <li><a href="../index.php" title="Главная">
                             <span>Главная</span>
                         </a></li>
-                        <li><a href="./Catalog_page.php" title="Каталог товаров">
+                        <li><a href="Catalog_page.php" title="Каталог товаров">
                             <span>Каталог товаров</span>
                         </a></li>
-                        <li><a href="./Catalog_page.php" title="Телескопы">
+                        <li><a href="Catalog_page.php" title="Телескопы">
                             <span>Телескопы</span>
                         </a></li>
                         <li><a href="#" title="<?= $product['name']; ?>" class="last__nav">
@@ -73,17 +73,17 @@
                         <ul class="product-card__image-list">
                             <li class="product-card__image-item">
                                 <a href="#" class="link_toCard product-card__image-link">
-                                    <img src="assest/img/Product_card/subcard1.jpg" alt="<?= $product['name'] ?>" title="<?= $product['name'] ?>" class="product-card__image">
+                                    <!-- <img src="" alt="<?= $product['name'] ?>" title="<?= $product['name'] ?>" class="product-card__image"> -->
                                 </a>
                             </li>
                             <li class="product-card__image-item">
                                 <a href="#" class="link_toCard product-card__image-link">
-                                    <img src="assest/img/Product_card/subcard2.jpg" alt="<?= $product['name'] ?>" title="<?= $product['name'] ?>" class="product-card__image">
+                                    <!-- <img src="" alt="<?= $product['name'] ?>" title="<?= $product['name'] ?>" class="product-card__image"> -->
                                 </a>
                             </li>
                             <li class="product-card__image-item">
                                 <a href="#" class="link_toCard product-card__image-link">
-                                    <img src="assest/img/Product_card/subcard3.jpg" alt="<?= $product['name'] ?>" title="<?= $product['name'] ?>" class="product-card__image">
+                                    <!-- <img src="" alt="<?= $product['name'] ?>" title="<?= $product['name'] ?>" class="product-card__image"> -->
                                 </a>
                             </li>
                         </ul>
@@ -182,18 +182,18 @@
                             <?php if(!isset($_SESSION['user'])) { ?>
 
                                 <?php } elseif($_SESSION['user']['role'] == 2) { ?>
-                                    <a href="include/updateForm.php?id=<?= $product['product_id'] ?>">
+                                    <a href="../include/updateForm.php?id=<?= $product['product_id'] ?>">
                                         <button class="product-card__button btn-lg btn-addon btn-base-brand-1">
                                             Редактировать
                                         </button>
                                     </a>
-                                    <a href="include/deleteCart.php?id=<?= $product['product_id'] ?>">
+                                    <a href="../include/deleteCart.php?id=<?= $product['product_id'] ?>">
                                         <button class="product-card__button btn-lg btn-addon btn-base-brand-1 button__delete">
                                             Удалить
                                         </button>
                                     </a>
                                     <?php } else { ?>
-                                        <a href="include/addCart.php?id=<?= $product['product_id'] ?>">
+                                        <a href="../include/addCart.php?id=<?= $product['product_id'] ?>">
                                             <button class="product-card__button btn-lg btn-addon btn-base-brand-1 icon icon-add-basket">
                                                 Добавить в корзину
                                             </button>
@@ -229,7 +229,7 @@
                             <p>
                                 Прибор станет полезным и удобным проводников по космическим просторам для тех, кто делает свои первые шаги в изучении небесных светил. С его помощью можно рассматривать кратеры на Луне, различить многочисленные спутники Юпитера, насладиться незабываемым видом колец Сатурна. Модель представляет собой ахроматический рефлектор. Он предназначен для изучения основ астрономии на начальном уровне и вызывает восторг и увлечение у детей. Благодаря своей доступной цене рефлектор относится к бюджетному сегменту, но его нельзя считать просто игрушкой для наблюдений за звездным небом.
                             </p>
-                            <img src="assest/img/img_card/img_card1.jpg" alt="Телескоп" title="<?= $product['name'] ?>" class="img__card-tabs">
+                            <img src="../assest/img/img_card/img_card1.jpg" alt="Телескоп" title="<?= $product['name'] ?>" class="img__card-tabs">
 
                             <h2>Улучшенная оптика телескопа <?= $product['name'] ?></h2>
                             <p>
@@ -247,9 +247,9 @@
         Подвал сайта
     -->
     <?php
-        include "./include/footer.php";
+        include "../include/footer.php";
     ?>
 
-    <script src="assest/JS/photos.js"></script>
+    <script src="../assest/JS/photos.js"></script>
 </body>
 </html>

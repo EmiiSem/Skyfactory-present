@@ -10,11 +10,11 @@
     <title>Контакты интернет-магазина телескопов</title>
     <meta name="robots" content="">
     <meta name="description" content="Контакты, номера телефона с разных городов интернет-магазина телескопов SkyFactory.">
-    <link rel="stylesheet" href="assest/CSS/contact_page.css">
-    <link rel="stylesheet" href="assest/CSS/header.css">
-    <link rel="stylesheet" href="assest/CSS/footer.css">
-    <link rel="stylesheet" href="assest/CSS/bootstrap.min.css">
-    <link rel="stylesheet" href="assest/CSS/personal_page.css">
+    <link rel="stylesheet" href="../assest/CSS/contact_page.css">
+    <link rel="stylesheet" href="../assest/CSS/header.css">
+    <link rel="stylesheet" href="../assest/CSS/footer.css">
+    <link rel="stylesheet" href="../assest/CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../assest/CSS/personal_page.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
@@ -24,7 +24,7 @@
         Шапка сайта
     -->
     <?php
-        include "./include/header.php";
+        include "../include/header.php";
     ?>
 
 <div class="main">
@@ -32,7 +32,7 @@
 
             <div class="subpage_nav">
                 <ul class="breadcrumb-nav">
-                    <li><a href="./index.php" title="Главная">
+                    <li><a href="../index.php" title="Главная">
                         <span>Главная</span>
                     </a></li>
                     <li><a href="#" title="Контакты интернет-магазина" class="last__nav">
@@ -75,7 +75,7 @@
                     <br>
                     <a href="#" class="form__btn">
                         <button type="button" class="btn__item">
-                            <img src="assest/img/tel.svg" alt="Отправка сообщения" class="tel_btn">
+                            <img src="../assest/img/tel.svg" alt="Отправка сообщения" class="tel_btn">
                             Отправить сообщение
                         </button>
                     </a>
@@ -90,7 +90,7 @@
         Подвал сайта
     -->
     <?php
-        include "./include/footer.php";
+        include "../include/footer.php";
     ?>
 </body>
 </html>

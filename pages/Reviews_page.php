@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    require "include/connect.php";
+    require "../include/connect.php";
 
     // $products = mysqli_query($db, "SELECT * FROM `products` JOIN `categories` WHERE `products`.category = `categories`.category_id");
     // SELECT * FROM `reviews` JOIN `users` WHERE `reviews`.user_id = `users`.id
@@ -17,12 +17,12 @@
     <title>Отзывы сайта SkyFactory</title>
     <meta name="robots" content="nofollow">
     <meta name="description" content="Интернет-магазин телескопов. Отзывы пользователей о магазине и о телескопах.">
-    <link rel="stylesheet" href="assest/CSS/reviews_page.css">
-    <link rel="stylesheet" href="assest/CSS/bootstrap.min.css">
-    <link rel="stylesheet" href="assest/CSS/header.css">
-    <link rel="stylesheet" href="assest/CSS/footer.css">
-    <link rel="stylesheet" href="assest/CSS/dropdown.css">
-    <link rel="stylesheet" href="assest/CSS/personal_page.css">
+    <link rel="stylesheet" href="../assest/CSS/reviews_page.css">
+    <link rel="stylesheet" href="../assest/CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../assest/CSS/header.css">
+    <link rel="stylesheet" href="../assest/CSS/footer.css">
+    <link rel="stylesheet" href="../assest/CSS/dropdown.css">
+    <link rel="stylesheet" href="../assest/CSS/personal_page.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
@@ -32,7 +32,7 @@
         Шапка сайта
     -->
     <?php
-        include "./include/header.php";
+        include "../include/header.php";
     ?>
 
     <!--
@@ -43,7 +43,7 @@
 
             <div class="subpage_nav">
                 <ul class="breadcrumb-nav">
-                    <li><a href="./index.php" title="Главная">
+                    <li><a href="../index.php" title="Главная">
                         <span>Главная</span>
                     </a></li>
                     <li><a href="#" title="Отзывы об магазине" class="last__nav">
@@ -56,7 +56,7 @@
             <h1 class="page__title">Отзывы о магазине</h1>
 
             <div class="store-reviews container">
-                <form action="include/reviews.php" method="POST">
+                <form action="../include/reviews.php" method="POST">
                     <div class="reviews-list__item reviews-list__item--button">
                         <button class="btn-lg btn-addon btn-base-brand-1 reviews-list__button-add">
                             Написать отзыв
@@ -125,7 +125,7 @@
         Подвал сайта
     -->
     <?php
-        include "./include/footer.php";
+        include "../include/footer.php";
     ?>
     
 </body>

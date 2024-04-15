@@ -1,10 +1,10 @@
 <?php
     session_start();
 
-    require "include/connect.php";
+    require "../include/connect.php";
 
     if(!isset($_SESSION['user']['id'])) {
-        return header("Location: index.php?message=Вы не авторизированы");
+        return header("Location: ../index.php?message=Вы не авторизированы");
     }
 
     $sql = sprintf("SELECT `order_id`, `product_id`, `orders`.`count`, `name`, `price`, `path` FROM `orders` INNER JOIN `products` USING(`product_id`) WHERE `user_id`='%s'", $_SESSION['user']['id']);
@@ -38,11 +38,11 @@
                 </a>
                 <!-- блок изменения кол-ва товаров -->
                 <div class="block_change-count">
-                    <a href="include/delete_cart.php?id=%s" class="btn2">
+                    <a href="../include/delete_cart.php?id=%s" class="btn2">
                         <i class="fa fa-minus" aria-hidden="true"></i>
                     </a>
                     <p class="mt-2 ml-1 mr-1">%s</p>
-                    <a href="include/addCart.php?id=%s" class="btn2">
+                    <a href="../include/addCart.php?id=%s" class="btn2">
                         <i class="fa fa-plus" aria-hidden="true"></i>
                     </a>
                 </div>
@@ -94,10 +94,10 @@
     <title>Корзина товаров интернет-магазина телескопов</title>
     <meta name="robots" content="noindex">
     <meta name="description" content="Корзина товаров интернет-магазина телескопов SkyFactory. Покупка телескопов">
-    <link rel="stylesheet" href="assest/CSS/cart.css">
-    <link rel="stylesheet" href="assest/CSS/header.css">
-    <link rel="stylesheet" href="assest/CSS/footer.css">
-    <link rel="stylesheet" href="assest/CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../assest/CSS/cart.css">
+    <link rel="stylesheet" href="../assest/CSS/header.css">
+    <link rel="stylesheet" href="../assest/CSS/footer.css">
+    <link rel="stylesheet" href="../assest/CSS/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
@@ -118,7 +118,7 @@
 
             <div class="subpage_nav">
                 <ul class="breadcrumb-nav">
-                    <li><a href="index.php" title="Главная">
+                    <li><a href="../index.php" title="Главная">
                         <span>Главная</span>
                     </a></li>
                     <li><a href="#" title="Корзина" class="last__nav">
@@ -164,7 +164,7 @@
     </div>
 
     <?php
-        include "./include/footer.php";
+        include "../include/footer.php";
     ?>
 </body>
 </html>

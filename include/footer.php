@@ -1,19 +1,18 @@
 <footer class="footer col-12">
     <div class="container navbar">
-        <a href="./index.php" class="logo-link logo_lk">
-            <img src="assest/img/logo.svg" alt="SkyFactory" class="img_log"> <!-- Логотип -->
+        <a href="../index.php" class="logo-link logo_lk">
+            <img src="../assest/img/logo.svg" alt="SkyFactory" class="img_log"> <!-- Логотип -->
         </a>
-        <a href="./index.php" class="logo-link1">
+        <a href="../index.php" class="logo-link1">
             <p class="logo__text">SkyFactory</p>
         </a>
-        <!-- <p class="logo__text">SkyFactory</p> -->
 
         <div class="footer__section">         
             <div class="footer-column">Популярные разделы</div>
             <ul class="list-unstyled simple-list alint-left">
-                <li><a href="./Catalog_page.php" class="footer_link">Телескопы Sky-Watcher</a></li>
-                <li><a href="./Catalog_page.php" class="footer_link">Телескоп рефлектор (зеркальные)</a></li>
-                <li><a href="./Quastion_page.php" class="footer_link">Часто задаваемые вопросы</a></li>
+                <li><a href="../pages/Catalog_page.php" class="footer_link">Телескопы Sky-Watcher</a></li>
+                <li><a href="../pages/Catalog_page.php" class="footer_link">Телескоп рефлектор (зеркальные)</a></li>
+                <li><a href="../pages/Quastion_page.php" class="footer_link">Часто задаваемые вопросы</a></li>
             </ul>
         </div>
         <div class="footer__section"> 

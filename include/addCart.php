@@ -2,7 +2,7 @@
     session_start();
 
     if(!isset($_SESSION['user']['id'])) {
-        header("Location: ../Login_page.php");
+        header("Location: ../pages/Login_page.php");
         $_SESSION['message'] = "Вы не авторизированы";
     }
 
@@ -15,7 +15,7 @@
     $product = $db->query($sql)->fetch_assoc();
 
     if($product['count'] == 0) {
-        return header("Location: ../Basket.php?message=Товар отсутствует");
+        return header("Location: ../pages/Basket.php?message=Товар отсутствует");
     }
 
     $sql = sprintf("SELECT * FROM `orders` WHERE `user_id`='%s' AND `product_id`='%s'",
@@ -31,7 +31,7 @@
     $db->query(sprintf("UPDATE `products` SET `count`='%s' WHERE `product_id`='%s'",
     --$product['count'], $product['product_id']));
 
-    return header("Location: ../Basket.php");
+    return header("Location: ../pages/Basket.php");
 
     
 ?>

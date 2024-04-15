@@ -18,14 +18,14 @@
         
         if($db->query($sql)) {
             $_SESSION['message2'] = "Ваш отзыв добавлен!";
-            header("Location: ../Reviews_add.php");
+            header("Location: ../pages/Reviews_add.php");
         } else {
             $_SESSION['message2'] = "Ошибка добавления данных: " . $sql . "<br>" . $db->error;
-            header("Location: ../Reviews_add.php");
+            header("Location: ../pages/Reviews_add.php");
         }
     } else {
         $_SESSION['message2'] = "Заполните все поля!";
-        header("Location: ../Reviews_add.php");
+        header("Location: ../pages/Reviews_add.php");
     }
 
     $db->close();

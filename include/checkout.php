@@ -3,7 +3,7 @@
 
     if(!isset($_SESSION['user']['id'])) {
         $_SESSION['message'] = "Вы не авторизированы";
-        header("Location:.../Login_page.php");
+        header("Location: ../pages//Login_page.php");
     }
 
     require "connect.php";
@@ -24,6 +24,6 @@
         $_SESSION["user"]['id']));
     }
 
-    return header("Location:../Personal_shoplist_page.php?message=Заказ оформлен");
+    return header("Location: ../pages/Personal_shoplist_page.php?message=Заказ оформлен");
 
 ?>

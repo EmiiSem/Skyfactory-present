@@ -10,11 +10,11 @@
     <title>О компании "SkyFactory"</title>
     <meta name="robots" content="">
     <meta name="description" content="О компании интернет-магазина телескопов SkyFactory.">
-    <link rel="stylesheet" href="assest/CSS/about_page.css">
-    <link rel="stylesheet" href="assest/CSS/header.css">
-    <link rel="stylesheet" href="assest/CSS/footer.css">
-    <link rel="stylesheet" href="assest/CSS/bootstrap.min.css">
-    <link rel="stylesheet" href="assest/CSS/personal_page.css">
+    <link rel="stylesheet" href="../assest/CSS/about_page.css">
+    <link rel="stylesheet" href="../assest/CSS/header.css">
+    <link rel="stylesheet" href="../assest/CSS/footer.css">
+    <link rel="stylesheet" href="../assest/CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../assest/CSS/personal_page.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
@@ -24,7 +24,7 @@
         Шапка сайта
     -->
     <?php
-        include "./include/header.php";
+        include "../include/header.php";
     ?>
 
     <div class="main">
@@ -64,7 +64,7 @@
         Подвал сайта
     -->
     <?php
-        include "./include/footer.php";
+        include "../include/footer.php";
     ?>
 </body>
 </html>

@@ -22,11 +22,11 @@
             header('Location: ../index.php');
         } else {
             $_SESSION['message'] = 'Пароль указан неверно!';
-            header('Location: ../Login_page.php');
+            header('Location: ../pages/Login_page.php');
         }   
     } else {
         $_SESSION['message'] = 'Такого пользователя не существует';
-        header('Location: ../Login_page.php');
+        header('Location: ../pages/Login_page.php');
     }
 
     // Закрытие соединения с базой данных

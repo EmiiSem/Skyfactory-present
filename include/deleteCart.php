@@ -6,8 +6,8 @@
     {
         include "connect.php";
         mysqli_query($db, "DELETE FROM `products` WHERE `products`.`product_id` = '$id'");
-        header("Location: ../Catalog_page.php");
+        header("Location: ../pages/Catalog_page.php");
     } else {
-        header("Location: ../Cart_page.php");
+        header("Location: ../pages/Cart_page.php");
     }
 ?>

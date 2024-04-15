@@ -1,7 +1,25 @@
 <?php
     session_start();
 
-    // print_r($_SESSION);
+    if(isset($_SESSION['user']['id'])) {
+        require "include/connect.php";
+
+        $sql = sprintf("SELECT `order_id`, `product_id`, `orders`.`count`, `name`, `price`, `path` FROM `orders` INNER JOIN `products` USING(`product_id`) WHERE `user_id`='%s'", $_SESSION['user']['id']);
+        $result = $db->query($sql);
+
+        $totalCount = 0;
+
+        if($row = $result->fetch_assoc()) {
+            $count = $row["count"];
+            $totalCount += $count;
+
+            $cartNum .= sprintf('
+            <div class="cart__num" id="cart_num">%s</div>
+            ', $totalCount);
+        } elseif($cartNum == "") {
+            $cartNum = '<div class="cart__num" id="cart_num">0</div>';
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -12,9 +30,9 @@
     <title>Главная страница SkyFactory</title>
     <meta name="robots" content="">
     <meta name="description" content="Телескопы, монтировки, окуляры, астрономические фильтры, в магазине телескопов Интернет магазин SkyFactory.">
-    <link rel="stylesheet" href="./assest/CSS/home_page.css">
-    <link rel="stylesheet" href="./assest/CSS/bootstrap.min.css">
-    <link rel="stylesheet" href="./assest/CSS/personal_page.css">
+    <link rel="stylesheet" href="assest/CSS/home_page.css">
+    <link rel="stylesheet" href="assest/CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="assest/CSS/personal_page.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
@@ -23,9 +41,70 @@
     <!--
         Шапка сайта
     -->
-    <?php
-        include "./include/header.php";
-    ?>
+    <header class="header col-12">
+        <div class="navbar container">
+            <a href="index.php" class="logo-link logo_png">
+                <img src="assest/img/logo.svg" alt="SkyFactory"> <!-- Логотип -->
+            </a>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <!--
+                        Бургер меню (выпадающее меню)
+                    -->
+                    <li class="nav__item">
+                        <button class="hamburger-menu">
+                            <input id="menu__toggle" class="check__box" type="checkbox" />
+                            <label class="menu__btn" for="menu__toggle">
+                                <p class="text__menu">Меню</p>
+                                <span></span>
+                            </label>
+                            
+                            <ul class="menu__box">
+                              <li><a class="menu__item" href="index.php">Главная</a></li>
+                              <li><a class="menu__item" href="pages/Catalog_page.php">Каталог товаров</a></li>
+                              <li><a class="menu__item" href="pages/Reviews_page.php">Отзывы</a></li>
+                              <li><a class="menu__item" href="pages/Quastion_page.php">Часто задаваемые вопросы</a></li>
+                              <li><a class="menu__item" href="pages/Contact_page.php">Контакты</a></li>
+                              <li><a class="menu__item" href="pages/About__page.php">О SkyFactory</a></li>
+                            </ul>
+                        </button>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">
+                            <div class="form__search">
+                                <form action="pages/Search_page.php" method="POST">
+                                    <input type="search" class="text__search" name="search" placeholder="Поиск товара..." autocomplete="off">
+                                </form>
+                            </div>
+                        </a>
+                    </li>
+
+                    <? if (!isset($_SESSION['user'])) { ?>
+                        <li class="nav__item lk__mobile">
+                            <img src="assest/img/account.svg" alt="" class="lk_img">
+                            <a href="pages/Register_page.php" class="nav__link lk_link">Личный кабинет</a>
+                        </li>
+                    <? } elseif ($_SESSION['user']['role'] == '2') { ?>
+                        <li class="nav__item admin_link"><a class="nav__link " href="pages/Admin_page.php">Админ-панель</a></li>
+                        <li class="nav__item admin_link"><a class="nav__link " href="include/logout.php">Выход</a></li>
+                    <? } else { ?>
+                        <li class="nav__item"><a class="nav__link lk_link" href="include/logout.php">Выход</a></li>
+                        <li class="nav__item"><a class="nav__link lk_link" href="pages/Personal_accout_page.php">Кабинет</a></li>
+                        <li class="nav__item"><a class="nav__link lk_link" href="pages/Basket.php">
+                            <button class="cart" id="cart">
+                                <img class="cart__image" src="assest/img/shopping_cart.svg" alt="Cart" />
+                                <?= $cartNum ?>
+                            </button>
+                        </a></li>
+                    <? } ?>
+                </ul>
+            </nav>
+            
+        </div>
+        <!-- /.navbar -->
+    </header>
+    <!-- /.header -->
 
     <!-- 
         Основной раздел
@@ -219,9 +298,33 @@
     </div>
 </div>
 
-    <?php
-        require 'include/footer.php';
-    ?>
+<footer class="footer col-12">
+    <div class="container navbar">
+        <a href="index.php" class="logo-link logo_lk">
+            <img src="assest/img/logo.svg" alt="SkyFactory" class="img_log"> <!-- Логотип -->
+        </a>
+        <a href="index.php" class="logo-link1">
+            <p class="logo__text">SkyFactory</p>
+        </a>
+
+        <div class="footer__section">         
+            <div class="footer-column">Популярные разделы</div>
+            <ul class="list-unstyled simple-list alint-left">
+                <li><a href="pages/Catalog_page.php" class="footer_link">Телескопы Sky-Watcher</a></li>
+                <li><a href="pages/Catalog_page.php" class="footer_link">Телескоп рефлектор (зеркальные)</a></li>
+                <li><a href="pages/Quastion_page.php" class="footer_link">Часто задаваемые вопросы</a></li>
+            </ul>
+        </div>
+        <div class="footer__section"> 
+            <div class="footer-column column1">Контакты интернет-магазина</div>
+            <ul class="list-unstyled simple-list align-center">
+                <li><a href="tel:79998873750" class="footer_link">+7(999) 887 37 50</a></li>
+                <li><a href="tel:89998873750" class="footer_link">8(999) 887 37 50</a></li>
+            </ul>
+        </div>
+        <div class="footer-column footer_link copyright">© Магазин телескопов SkyFactory, 2023-2024</div>
+    </div>
+</footer>
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {

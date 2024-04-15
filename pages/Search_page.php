@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    require "include/connect.php";
+    require "../include/connect.php";
 
     $query = $_POST['search'];
 
@@ -26,7 +26,7 @@
             $data .= sprintf('
             <div class="card">
                 <div class="card__top">
-                    <a href="./Cart_page.php?id=%s" class="card__image">
+                    <a href="Cart_page.php?id=%s" class="card__image">
                         <img src="%s" alt="%s" title="%s">
                     </a>
                 </div>
@@ -34,17 +34,17 @@
                     <div class="card__prices">
                         <div class="card__price card__price--discount">%s</div>
                     </div>
-                    <a href="./Cart_page.php?id=%s" class="card__title">%s</a>
+                    <a href="Cart_page.php?id=%s" class="card__title">%s</a>
                 </div>
             </div>
             ', $row['product_id'], $row['path'], $row['name'], $row['name'], $row['price'], $row['product_id'], $row['name'],
         ($role == "2") ? '
         <div class="card__bottom">
-            <a onclick="return confirm(\'Вы действительно хотите удалить этот товар?\')" class="card__delete" href="./include/deleteCart.php?id='. $row['product_id']. '" class="card__title"><button class="card__remove">Удалить<i class="simbol"></i></button></a>
+            <a onclick="return confirm(\'Вы действительно хотите удалить этот товар?\')" class="card__delete" href="../include/deleteCart.php?id='. $row['product_id']. '" class="card__title"><button class="card__remove">Удалить<i class="simbol"></i></button></a>
         </div>' : '',
         ($role == "1") ? '
         <div class="card__bottom">
-            <a href="./include/addCart.php?id='. $row['product_id'] .'"><button class="card__add">В корзину<i class="simbol"></i></button></a>
+            <a href="../include/addCart.php?id='. $row['product_id'] .'"><button class="card__add">В корзину<i class="simbol"></i></button></a>
         </div>' : '');
         }
     } else {
@@ -61,11 +61,11 @@
     <title>Каталог товаров SkyFactory</title>
     <meta name="robots" content="">
     <meta name="description" content="SkyFactory, интернет-магазин телескопов, доставкой по всей России и СНГ">
-    <link rel="stylesheet" href="./assest/CSS/search_page.css">
-    <link rel="stylesheet" href="./assest/CSS/header.css">
-    <link rel="stylesheet" href="./assest/CSS/footer.css">
-    <link rel="stylesheet" href="./assest/CSS/bootstrap.min.css">
-    <link rel="stylesheet" href="./assest/CSS/personal_page.css">
+    <link rel="stylesheet" href="../assest/CSS/search_page.css">
+    <link rel="stylesheet" href="../assest/CSS/header.css">
+    <link rel="stylesheet" href="../assest/CSS/footer.css">
+    <link rel="stylesheet" href="../assest/CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../assest/CSS/personal_page.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
@@ -75,7 +75,7 @@
         Шапка сайта
     -->
     <?php
-        include "./include/header.php";
+        include "../include/header.php";
     ?>
 
     <!-- 
@@ -85,7 +85,7 @@
         <div class="page container">
             <div class="subpage_nav">
                 <ul class="breadcrumb-nav">
-                    <li><a href="index.php" title="Главная">
+                    <li><a href="../index.php" title="Главная">
                         <span>Главная</span>
                     </a></li>
                     <li><a href="Catalog_page.php" title="Каталог телескопов">
@@ -113,7 +113,7 @@
 
 
     <?php
-        require 'include/footer.php';
+        require '../include/footer.php';
     ?>
 </body>
 </html>

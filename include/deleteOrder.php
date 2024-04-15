@@ -13,10 +13,10 @@
     $order = $db->query("SELECT * FROM `orders` WHERE `user_id`='".$_SESSION['user']['id']."' AND `order_id`=".$id)->fetch_assoc();
 
     if($order['status'] != "Новый") {
-        return header("Location: ../Personal_shoplist_page.php?message=Удалить можно только заказы со статусом \"Новый\"");
+        return header("Location: ../pages/Personal_shoplist_page.php?message=Удалить можно только заказы со статусом \"Новый\"");
     } else {
         $db->query("DELETE FROM `orders` WHERE `order_id`=".$order['order_id']);
-        header("Location: ../Personal_shoplist_page.php?message=Заказ был удалён");
+        header("Location: ../pages/Personal_shoplist_page.php?message=Заказ был удалён");
     }
 
 ?>

@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    include "./include/connect.php";
+    include "../include/connect.php";
 
     $userId = $_SESSION['user']['id'];
 
@@ -30,11 +30,11 @@
     <title>Личный кабинет</title>
     <meta name="robots" content="noindex">
     <meta name="description" content="Личный кабинет Интернет магазина SkyFactory.">
-    <link rel="stylesheet" href="assest/CSS/personal_account_page.css">
-    <link rel="stylesheet" href="assest/CSS/header.css">
-    <link rel="stylesheet" href="assest/CSS/footer.css">
-    <link rel="stylesheet" href="assest/CSS/bootstrap.min.css">
-    <link rel="stylesheet" href="assest/CSS/personal_page.css">
+    <link rel="stylesheet" href="../assest/CSS/personal_account_page.css">
+    <link rel="stylesheet" href="../assest/CSS/header.css">
+    <link rel="stylesheet" href="../assest/CSS/footer.css">
+    <link rel="stylesheet" href="../assest/CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../assest/CSS/personal_page.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
@@ -44,7 +44,7 @@
         Шапка сайта
     -->
     <?php
-        include "./include/header.php";
+        include "../include/header.php";
     ?>
 
     <!--
@@ -55,7 +55,7 @@
 
             <div class="subpage_nav">
                 <ul class="breadcrumb-nav">
-                    <li><a href="./index.php" title="Главная">
+                    <li><a href="../index.php" title="Главная">
                         <span>Главная</span>
                     </a></li>
                     <li><a href="#" title="Персональный раздел" class="last__nav">
@@ -85,7 +85,7 @@
                             </li>
 
                             <li class="menu__item menu__item-unlock">
-                                <a href="./include/logout.php">Выйти</a>
+                                <a href="../include/logout.php">Выйти</a>
                             </li>
 
                         </ul>
@@ -100,7 +100,7 @@
                         Вы можете менять свои личные данные, почту, управлять
                         <br>
                         аккаунтом в разделе
-                        <a class="link link-sub-1" href="./Personal_accout_page_dop.php">персональной информации</a>
+                        <a class="link link-sub-1" href="Personal_accout_page_dop.php">персональной информации</a>
                     </div>
                     <!-- ./tool -->
 
@@ -131,7 +131,7 @@
     <!-- ./main -->
 
     <?php
-        require 'include/footer.php';
+        require '../include/footer.php';
     ?>
 </body>
 </html>

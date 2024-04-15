@@ -11,11 +11,11 @@
     <meta name="robots" content="">
     <meta name="description" content="Полезные статьи по телескопам и их использовании. Помощь с выбором и ответы на интерисующиеся вопросы, касаемо
     телескопов. Как выбрать подходящий телескоп. Как выбрать телескоп для наблюдения.">
-    <link rel="stylesheet" href="assest/CSS/quastions_page.css">
-    <link rel="stylesheet" href="assest/CSS/header.css">
-    <link rel="stylesheet" href="assest/CSS/footer.css">
-    <link rel="stylesheet" href="assest/CSS/bootstrap.min.css">
-    <link rel="stylesheet" href="assest/CSS/personal_page.css">
+    <link rel="stylesheet" href="../assest/CSS/quastions_page.css">
+    <link rel="stylesheet" href="../assest/CSS/header.css">
+    <link rel="stylesheet" href="../assest/CSS/footer.css">
+    <link rel="stylesheet" href="../assest/CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../assest/CSS/personal_page.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
@@ -25,7 +25,7 @@
         Шапка сайта
     -->
     <?php
-        include "./include/header.php";
+        include "../include/header.php";
     ?>
 
     <!--
@@ -36,7 +36,7 @@
 
             <div class="subpage_nav">
                 <ul class="breadcrumb-nav">
-                    <li><a href="./index.php" title="Главная">
+                    <li><a href="../index.php" title="Главная">
                         <span>Главная</span>
                     </a></li>
                     <li><a href="#" title="Полезные статьи">
@@ -125,57 +125,10 @@
     <!-- ./main -->
 
     <!--
-        Выпадающее меню (модальное окно с корзиной)
-    -->
-    <div class="popup">
-        <div class="popup__container" id="popup_container">
-            <div class="popup__item">
-                <h1 class="popup__title">Оформление заказа</h1>
-            </div>
-            <div class="popup__item" id="popup_product_list">
-                <div class="popup__product">
-                    <div class="popup__product-wrap">
-                        <img src="assest/img/Products/cart1.jpg" alt="Телескоп Veber 360/50 рефрактор в кейсе" class="popup__product-image"/>
-                        <h2 class="popup__product-title">Телескоп Veber 360/50 рефрактор в кейсе</h2>
-                    </div>
-                    <div class="popup__product-wrap">
-                        <div class="popup__product-price">3 840</div>
-                        <button class="popup__product-delete"></button>
-                    </div>
-                </div>
-            </div>
-            <div class="popup__item">
-                <div class="popup__cost">
-                    <h2 class="popup__cost-title">Итого</h2>
-                    <output class="popup__cost-value" id="popup_cost">3 840</output>
-                </div>
-            <div class="popup__cost">
-                <h2 class="popup__cost-title">Скидка</h2>
-                <output class="popup__cost-value" id="popup_discount">0</output>
-            </div>
-            <div class="popup__cost">
-                <h2 class="popup__cost-title">Итого со скидкой</h2>
-                <output class="popup__cost-value" id="popup_cost_discount">3 840</output>
-            </div>
-            <div class="popup__cost">
-                <button type="submit" class="theme-background">
-                    Оформить заказ
-                    <i class="simbol"></i>
-                </button>
-            </div>
-        </div>
-        <button class="popup__close" id="popup_close">X</button>
-        </div>
-    </div>
-    <!-- ./popup -->
-
-    <!--
         Подвал сайта
     -->
     <?php
-        include "./include/footer.php";
+        include "../include/footer.php";
     ?>
-
-    <script src="assest/JS/main.js"></script>
 </body>
 </html>
