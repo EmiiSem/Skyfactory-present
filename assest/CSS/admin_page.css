@@ -186,6 +186,10 @@ a.last__nav {
     margin-top: 35px;
 }
 
+.inp_descript {
+    padding-top: 10px;
+}
+
 
 /* Страница добавления категории в админке */
 .page__category {
@@ -378,6 +382,12 @@ a.last__nav {
     padding-left: 5px;
 }
 
+
+/* Страница редактирования товара - админка */
+.info_update-category {
+    margin-left: 52px;
+    padding-bottom: 30px;
+}
 
 
 /* Адаптив */
