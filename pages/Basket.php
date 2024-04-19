@@ -107,7 +107,7 @@
         Шапка сайта
     -->
     <?php
-        include "./include/header.php";
+        include "../include/header.php";
     ?>
 
     <!-- 

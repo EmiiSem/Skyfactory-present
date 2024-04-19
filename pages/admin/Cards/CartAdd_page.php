@@ -62,6 +62,10 @@
                     <div class="flex flex-column gap-4">
                         <form action="../../../include/addProduct.php" method="POST" enctype="multipart/form-data">
                             <input type="text" name="name" class="input_admin" placeholder="Название товара" required>
+                            <textarea name="title" class="input_admin inp_descript" placeholder="Короткий заголовок" required></textarea>
+                            <textarea name="description" class="input_admin inp_descript" placeholder="Информация о товаре" required></textarea>
+                            <input type="text" name="type_telescope" class="input_admin" placeholder="Тип телескопа" required>
+                            <input type="text" name="mounting_plate" class="input_admin" placeholder="Монтировка" required>
                             <input type="text" name="price" class="input_admin" placeholder="Цена товара" required>
                             <input type="text" name="model" class="input_admin" placeholder="Модель товара" required>
                             <label for="category" class="category">Категория</label>

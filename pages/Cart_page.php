@@ -99,7 +99,7 @@
                                     <div class="product-card__characteristics-name">Тип телескопа</div>
                                     <div class="product-card__characteristics-dots"></div>
                                 </div>
-                                <div class="product-card__characteristics-value">рефрактор</div>
+                                <div class="product-card__characteristics-value"><?= $product['type'] ?></div>
                             </div>
 
                             <div class="product-card__characteristics-row">
@@ -107,7 +107,7 @@
                                     <div class="product-card__characteristics-name">Монтировка</div>
                                     <div class="product-card__characteristics-dots"></div>
                                 </div>
-                                <div class="product-card__characteristics-value">азимутальная</div>
+                                <div class="product-card__characteristics-value"><?= $product['mounting_plate'] ?></div>
                             </div>
 
                             <div class="product-card__characteristics-row">
@@ -182,7 +182,7 @@
                             <?php if(!isset($_SESSION['user'])) { ?>
 
                                 <?php } elseif($_SESSION['user']['role'] == 2) { ?>
-                                    <a href="../include/updateForm.php?id=<?= $product['product_id'] ?>">
+                                    <a href="admin/Update/UpdateCart_page.php?id=<?= $product['product_id'] ?>">
                                         <button class="product-card__button btn-lg btn-addon btn-base-brand-1">
                                             Редактировать
                                         </button>
@@ -225,16 +225,11 @@
                 <div class="tab-container product-tab">
                     <div class="tabs-content__item">
                         <div class="static-text static-text-lg">
-                            <h2><?= $product['name'] ?> – прекрасный подарок для начинающих астрономов</h2>
+                            <h2><?= $product['title'] ?></h2>
                             <p>
-                                Прибор станет полезным и удобным проводников по космическим просторам для тех, кто делает свои первые шаги в изучении небесных светил. С его помощью можно рассматривать кратеры на Луне, различить многочисленные спутники Юпитера, насладиться незабываемым видом колец Сатурна. Модель представляет собой ахроматический рефлектор. Он предназначен для изучения основ астрономии на начальном уровне и вызывает восторг и увлечение у детей. Благодаря своей доступной цене рефлектор относится к бюджетному сегменту, но его нельзя считать просто игрушкой для наблюдений за звездным небом.
+                                <?= $product['description'] ?>
                             </p>
-                            <img src="../assest/img/img_card/img_card1.jpg" alt="Телескоп" title="<?= $product['name'] ?>" class="img__card-tabs">
-
-                            <h2>Улучшенная оптика телескопа <?= $product['name'] ?></h2>
-                            <p>
-                                В комплект оптики входят два просветленных окуляра Super на 10 и 25 мм. Они позволяют добиться 28 кратного и 70-ти кратного увеличения соответственно. А применение линзы Барлоу дает возможность увеличить эти значения в два раза. При использовании диагонального зеркала эта линза может быть установлена перед ним, и тогда увеличение телескопа возрастет в 3 раза. Достигается высокая детализация изображения, так как хроматические аберрации минимальные. Объектив диаметром 7 см собирает света на 36 % больше чем аналог, имеющий объектив 60 мм. На линзах имеется просветляющее покрытие, состоящее из нескольких слоев.
-                           </p>
+                            <!-- <img src="../assest/img/img_card/img_card1.jpg" alt="Телескоп" title="<?= $product['name'] ?>" class="img__card-tabs"> -->
                         </div>
                     </div>
                 </div>

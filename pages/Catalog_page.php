@@ -145,10 +145,11 @@
                                             <? } elseif ($_SESSION['user']['role'] == '2') { ?>
                                                 <div>
                                                 <a onclick="return confirm('Вы действительно хотите удалить этот товар?')" class="card__delete" href="../include/deleteCart.php?id=<?= $product['product_id'] ?>" class="card__title"><button class="card__remove">Удалить<i class="simbol"></i></button></a>
+                                                <a href="admin/Update/UpdateCart_page.php?id=<?= $product['product_id'] ?>"><button class="card__add" style="margin-top:10px;">Редактировать<i class="simbol"></i></button></a>
                                         </div>
                                         <? } ?>
                                         <? if ($_SESSION['user']['role'] == '1') { ?>
-                                        <a href="../include/addCart.php?id=<?= $product['product_id'] ?>"><button class="card__add">В корзину<i class="simbol"></i></button></a>
+                                            <a href="../include/addCart.php?id=<?= $product['product_id'] ?>"><button class="card__add">В корзину<i class="simbol"></i></button></a>
                                         <? } ?>
                                     </div>
                                     <!-- Товар -->
