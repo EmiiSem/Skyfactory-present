@@ -61,7 +61,7 @@ a.last__nav {
 .main {
     background-color: #060918;
     padding-top: 18px;
-    height: 760px;
+    height: 100%;
 }
 
 /* Главная часть админки */
@@ -102,11 +102,15 @@ a.last__nav {
 
 .functions__btns {
     margin-left: 50px;
+    padding-bottom: 50px;
 }
+
+/* Страница добавления товара */
 
 .form_admin {
     margin-top: 60px;
     text-align: center;
+    padding-bottom: 50px;
 }
 
 .add_cart {
@@ -181,6 +185,200 @@ a.last__nav {
 .value_card {
     margin-top: 35px;
 }
+
+
+/* Страница добавления категории в админке */
+.page__category {
+    font-weight: 800;
+    font-size: 1.75rem;
+    line-height: 1.3;
+    color: #FFF;
+    margin-left: 55px;
+    margin-bottom: 1.875rem;
+    letter-spacing: -.04em;
+}
+
+.info_add-category {
+    margin-left: 52px;
+}
+
+.info-title {
+    color: #FFF;
+}
+
+.input_category {
+    width: 35%;
+    height: 40px;
+    padding-left: 10px;
+    margin: 10px 0px 0px 0px;
+    border-radius: 5px;
+    height: 38px;
+    font-size: 16px;
+    background: transparent;
+    border: 1px solid #FFF;
+    cursor: pointer;
+    color: #FFF;
+}
+
+.btn__addCategory {
+    background-color: #0A9396;
+    color: #FFF;
+    border-radius: 5px;
+    font-weight: 500;
+    border: none;
+    width: 35%;
+    height: 40px;
+    font-weight: 700;
+    margin-top: 30px;
+}
+
+.btn__addCategory:hover {
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #364364;
+    color: #FFF;
+    transition: 0.8s ease-in-out;
+}
+
+.removCat {
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+
+.info_remove-category {
+    margin-left: 52px;
+}
+
+.btn__removeCategory {
+    background-color: #d62240;
+    color: #FFF;
+    border-radius: 5px;
+    font-weight: 500;
+    border: none;
+    width: 35%;
+    height: 40px;
+    font-weight: 700;
+    margin-top: 30px;
+}
+
+.btn__removeCategory:hover {
+    background-color: #811426;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    color: #FFF;
+    transition: 0.8s ease-in-out;
+}
+
+.select-category {
+    width: 35%;
+    height: 40px;
+    padding-left: 10px;
+    margin: 10px 0px 0px 0px;
+    border-radius: 5px;
+    height: 38px;
+    font-size: 16px;
+    background: transparent;
+    border: 1px solid #FFF;
+    cursor: pointer;
+    color: #FFF;
+}
+
+.select-category option {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    min-width: 10rem;
+    padding: 0.5rem 0;
+    margin: 0.125rem 0 0;
+    font-size: 1rem;
+    color: #FFF;
+    text-align: left;
+    list-style: none;
+    background-color: #364364;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 0.25rem;
+}
+
+
+/* Страница заявок админки */
+.page__application {
+    font-weight: 800;
+    font-size: 1.75rem;
+    line-height: 1.3;
+    color: #FFF;
+    margin-left: 55px;
+    margin-bottom: 1.875rem;
+    letter-spacing: -.04em;
+}
+
+.applications {
+    margin-left: 50px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card_order {
+    background-color: #FFF;
+    width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.shopping-list {
+    margin-top: 40px;
+}
+
+.products_none {
+    color: #FFF;
+    margin-top: 20px;
+}
+
+.btn__confirm {
+    background-color: #0093B2;
+    color: #FFF;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.btn__confirm:hover {
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #364364;
+    color: #FFF;
+    transition: 0.8s ease-in-out;
+}
+
+.btn__cancel {
+    background-color: #d62240;
+    color: #FFF;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.btn__cancel:hover {
+    background-color: #811426;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    color: #FFF;
+    transition: 0.8s ease-in-out;
+}
+
+.cancel_text {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+
 
 /* Адаптив */
 @media screen and (max-width: 480px) {

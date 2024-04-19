@@ -1,15 +1,8 @@
 <?php
     session_start();
-    // include "include/connect.php";
     if($_SESSION['user']['role'] != "2") {
         header("Location: ../index.php?message=Отказано в доступе.");
     }
-
-    // if ($_SESSION['user']['role'] == '2') {
-    //     $categories = mysqli_query($db, "SELECT * FROM `categories`");
-    // } else {
-    //     header("Location: ../index.php?message=Отказано в доступе.");
-    // }
 ?>
 
 <!DOCTYPE html>
@@ -58,13 +51,13 @@
             <div class="page__middle">
                 <h3 class="page__choose">Выберите действия</h3>
                 <div class="functions__btns">
-                    <a href="">
+                    <a href="admin/Category/Category_page.php">
                         <button class="btn__choose">Страница добавления категорий</button>
                     </a>
-                    <a href="">
+                    <a href="admin/Cards/CartAdd_page.php">
                         <button class="btn__choose">Страница добавления товаров</button>
                     </a>
-                    <a href="">
+                    <a href="admin/Applications/Applications_page.php">
                         <button class="btn__choose">Страница заявок</button>
                     </a>
                 </div>
