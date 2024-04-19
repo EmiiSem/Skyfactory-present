@@ -255,3 +255,7 @@ a.last__nav {
 .cart:hover {
     transform: scale(1.1);
 }
+
+.empty_none {
+    padding-bottom: 100px;
+}
