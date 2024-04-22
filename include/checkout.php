@@ -15,9 +15,9 @@
 
     $product = $db->query($sql)->fetch_assoc();
 
-    // $db->query(sprintf("INSERT INTO `orders`(`product_id`, `user_id`, `number`, `count`, `status`) 
-    // VALUES('%s', '%s', '%s', '%s', 'Новый')", $product['product_id'] , $_SESSION["user"]['id'], rand(1000000000,2000000000), $count));
-    $db->query(sprintf("UPDATE `orders` SET `product_id`='%s', `user_id`='%s', `number`='%s', `count`='%s', `status`='Новый'", $product['product_id'], $_SESSION["user"]['id'], rand(1000000000,2000000000), $count));
+    $db->query(sprintf("INSERT INTO `orders`(`product_id`, `user_id`, `number`, `count`, `status`) 
+    VALUES('%s', '%s', '%s', '%s', 'Новый')", $product['product_id'] , $_SESSION["user"]['id'], rand(1000000000,2000000000), $count));
+    // $db->query(sprintf("UPDATE `orders` SET `product_id`='%s', `user_id`='%s', `number`='%s', `count`='%s', `status`='Новый'", $product['product_id'], $_SESSION["user"]['id'], rand(1000000000,2000000000), $count));
 
     if($db->affected_rows > 0) {
         $db->query(sprintf("DELETE FROM `orders` WHERE `user_id`='%s' AND `number` IS NULL",

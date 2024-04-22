@@ -2,7 +2,8 @@
     if(isset($_SESSION['user']['id'])) {
         require "connect.php";
 
-        $sql = sprintf("SELECT `order_id`, `product_id`, `orders`.`count`, `name`, `price`, `path` FROM `orders` INNER JOIN `products` USING(`product_id`) WHERE `user_id`='%s'", $_SESSION['user']['id']);
+        $sql = sprintf("SELECT `order_id`, `product_id`, `orders`.`count`, `name`, `price`, `path` FROM `orders` INNER JOIN `products` USING(`product_id`)
+        WHERE `status` IS NULL AND `user_id`='%s'", $_SESSION['user']['id']);
         $result = $db->query($sql);
 
         $totalCount = 0;

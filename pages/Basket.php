@@ -7,7 +7,8 @@
         return header("Location: ../index.php?message=Вы не авторизированы");
     }
 
-    $sql = sprintf("SELECT `order_id`, `product_id`, `orders`.`count`, `name`, `price`, `path` FROM `orders` INNER JOIN `products` USING(`product_id`) WHERE `user_id`='%s'", $_SESSION['user']['id']);
+    $sql = sprintf("SELECT `order_id`, `product_id`, `orders`.`count`, `name`, `price`, `path` FROM `orders`
+    INNER JOIN `products` USING(`product_id`) WHERE `status` IS NULL AND `user_id`='%s'", $_SESSION['user']['id']);
     $result = $db->query($sql);
 
     if($result == false) {
@@ -150,7 +151,7 @@
                         <p class="price-total"><?= $totalPrice ?> руб.</p>
                     </div>
                     <div class="block-inner-btn">
-                        <a href="include/checkout.php" class="btn__add-cart">
+                        <a href="../include/checkout.php" class="btn__add-cart">
                             <button class="btn__add">Перейти к оформлению</button>
                         </a>
                     </div>
