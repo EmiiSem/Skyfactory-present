@@ -131,8 +131,9 @@
                     <h1 class="personal-lk__name">Ваш список заказов - <?= $fio ?></h1>
 
                     <!-- Список товаров заказанных пользователем -->
-                    <?= $orders ?>
-
+                    <div class="applications">
+                        <?= $orders ?>
+                    </div>
 
 
                 </div>

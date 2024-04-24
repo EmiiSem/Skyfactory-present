@@ -329,10 +329,17 @@ a.last__nav {
     padding: 20px;
     border-radius: 10px;
     text-align: center;
+    margin-left: 30px;
+}
+
+.card_order:first-child {
+    margin-left: 0;
 }
 
 .shopping-list {
     margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .products_none {

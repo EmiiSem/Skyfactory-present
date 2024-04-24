@@ -93,9 +93,9 @@
             <div class="page__middle">
                 <h3 class="page__application">Заявки</h3>
                 <div class="applications">
-                <div class="shopping-list">
-                    <?= $orders ?>
-                </div>
+                    <div class="shopping-list">
+                        <?= $orders ?>
+                    </div>
             </div>
 
         </div>
