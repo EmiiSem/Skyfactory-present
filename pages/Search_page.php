@@ -1,7 +1,8 @@
 <?php
     session_start();
-
     require "../include/connect.php";
+
+    $role = (isset($_SESSION['user']['role'])) ? $_SESSION['user']['role'] : "guest";
 
     $query = $_POST['search'];
 
@@ -35,17 +36,15 @@
                         <div class="card__price card__price--discount">%s</div>
                     </div>
                     <a href="Cart_page.php?id=%s" class="card__title">%s</a>
+                    %s
+                    %s
                 </div>
             </div>
             ', $row['product_id'], $row['path'], $row['name'], $row['name'], $row['price'], $row['product_id'], $row['name'],
         ($role == "2") ? '
-        <div class="card__bottom">
-            <a onclick="return confirm(\'Вы действительно хотите удалить этот товар?\')" class="card__delete" href="../include/deleteCart.php?id='. $row['product_id']. '" class="card__title"><button class="card__remove">Удалить<i class="simbol"></i></button></a>
-        </div>' : '',
+            <a onclick="return confirm(\'Вы действительно хотите удалить этот товар?\')" class="card__delete" href="../include/deleteCart.php?id='. $row['product_id']. '" class="card__title"><button class="card__remove">Удалить<i class="simbol"></i></button></a>' : '',
         ($role == "1") ? '
-        <div class="card__bottom">
-            <a href="../include/addCart.php?id='. $row['product_id'] .'"><button class="card__add">В корзину<i class="simbol"></i></button></a>
-        </div>' : '');
+            <a href="../include/addCart.php?id='. $row['product_id'] .'"><button class="card__add">В корзину<i class="simbol"></i></button></a>' : '');
         }
     } else {
         $data = '<h3 class="empty_none">По вашему поиску ничего не найдено</h3>';

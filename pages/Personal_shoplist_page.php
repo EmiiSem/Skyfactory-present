@@ -24,24 +24,22 @@
     $product = $db->query($sql)->fetch_assoc();
 
     // Получение данных заказанных товаров
-    $sql = sprintf("SELECT * FROM `orders` WHERE `user_id`='%s' AND `number` IS NOT NULL AND `product_id`='%s' ORDER BY `created_at` DESC", $_SESSION['user']['id'], $product['product_id']);
+    $sql = sprintf("SELECT * FROM `orders` WHERE `user_id`='%s' AND `status` IS NOT NULL ORDER BY `created_at` DESC", $_SESSION['user']['id']);
     $result = $db->query($sql);
 
     $orders = "";
     while($row = $result->fetch_assoc()) {
-        $del = ($row['status'] == "Новый") ? '<p><a onclick="return confirm(\'Вы действительно хотите удалить этот заказ?\')" href="include/deleteOrder.php?id='.$row['order_id'].'">Удалить заказ</a></p>' : '';
+        $del = ($row['status'] == "Новый") ? '<p><a style="font-size: 18px; color: red; font-weight: 700" onclick="return confirm(\'Вы действительно хотите удалить этот заказ?\')" href="include/deleteOrder.php?id='.$row['order_id'].'">Удалить заказ</a></p>' : '';
         $reason = ($row['reason'] ==! "") ? '<p>Причина отмены: <b>'.$row['reason'].'</b></p>' : '';
         $orders .= sprintf('
-        <div class="shopping-list">
-            <div class="card_order">
-                <h6><b>Заказ от <br> %s</b></h6>
-                <p>%s</p>
-                <hr class="my-2">
-                %s
-                <p>Статус: <b>%s</b></p>
-                %s
-                <p>Количество товаров: <b>%s</b></p>
-            </div>
+        <div class="card_order">
+            <h6><b>Заказ от <br> %s</b></h6>
+            <p>Номер заказа: <b>%s</b></p>
+            <hr class="my-2">
+            %s
+            <p>Статус: <b>%s</b></p>
+            %s
+            <p>Количество товаров: <b>%s</b></p>
         </div>
         ', $row['created_at'], $row['number'], $del, $row['status'], $reason, $row['count']);
     }
@@ -65,7 +63,6 @@
     <link rel="stylesheet" href="../assest/CSS/header.css">
     <link rel="stylesheet" href="../assest/CSS/footer.css">
     <link rel="stylesheet" href="../assest/CSS/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="assest/CSS/personal_page.css"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
@@ -132,7 +129,9 @@
 
                     <!-- Список товаров заказанных пользователем -->
                     <div class="applications">
-                        <?= $orders ?>
+                        <div class="shopping-list">
+                            <?= $orders ?>
+                        </div>
                     </div>
 
 

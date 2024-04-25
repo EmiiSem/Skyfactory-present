@@ -5,7 +5,7 @@
     }
     require "../../../include/connect.php";
 
-    $sql = "SELECT * FROM `orders` INNER JOIN users ON orders.user_id = users.id ORDER BY `created_at` DESC";
+    $sql = "SELECT * FROM `orders` INNER JOIN users ON orders.user_id = users.id WHERE `status` IS NOT NULL ORDER BY `created_at` DESC";
     $result = $db->query($sql);
     $orders = "";
     
@@ -23,7 +23,7 @@
         </form>
         ' : '';
         $adv = ($row['status'] == "Отменённый") ? '
-            <p>Причина отмены: ' . $row['reason'] . '</p>
+            <p style="font-size: 18px; color: red;">Причина отмены: <b>' . $row['reason'] . '</b></p>
         ' : $adv;
 
         $orders .= sprintf('

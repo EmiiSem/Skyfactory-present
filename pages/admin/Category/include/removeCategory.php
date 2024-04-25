@@ -4,7 +4,7 @@
     }
     require "../../../../include/connect.php";
     
-    $category = sqlite_escape_string($_POST['category-list']);
+    $category = $_POST['category-list'];
 
     $db->query(sprintf("DELETE FROM `categories` WHERE `category`='%s'", $category));
 

@@ -303,14 +303,22 @@ a.last__nav {
 /* Страница списка заказов */
 .card_order {
     background-color: #FFF;
-    width: 250px;
+    width: 90%;
+    height: 100%;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
 }
 
+.card_order:first-child {
+    margin-top: 0;
+}
+
 .shopping-list {
     margin-top: 40px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 280px 300px 280px;
 }
 
 .products_none {
