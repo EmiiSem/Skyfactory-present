@@ -98,7 +98,7 @@
                                 <!-- Сортировка -->
                                 <div class="product-sorting">
                                     Сортировать: 
-                                    <div class="btn-group">
+                                    <div class="btn-group btn__mobuile">
                                         <select class="dropdown-menu btn btn-default dropdown-toggle" id="dropdown-menu">
                                             <option value="default">По умолчанию</option>
                                             <option value="asc">По возрастанию</option>
@@ -109,8 +109,8 @@
                                 <div class="pull-right">
                                     <div class="product-count">
                                         Выводить по: 
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-default dropdown-toggle">
+                                        <div class="btn-group btn__mobl">
+                                            <button type="button" class="btn btn-default dropdown-toggle" id="drop__mob">
                                                 Все
                                                 <span class="caret"></span>
                                             </button>

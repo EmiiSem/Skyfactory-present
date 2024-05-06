@@ -84,17 +84,7 @@
 
     .logo__text {
         font-size: 18px;
-        margin-right: 6rem;
-    }
-
-    .logo_lk {
-        margin-left: 1rem;
-        margin-right: auto;
-    }
-
-    .logo__text {
-        font-size: 18px;
-        margin-right: 6rem;
+        margin-right: 50px;
     }
 
     .footer__section {
@@ -131,5 +121,7 @@
     .copyright {
         margin-top: -5%;
     }
+
+    
 
 }

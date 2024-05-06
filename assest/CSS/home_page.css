@@ -935,8 +935,8 @@ body {
     }
 
     .lk__mobile {
-        margin-top: -40%;
-        margin-left: 40%;
+        margin-top: -45%;
+        margin-left: 20%;
     }
     
     .form__search {
@@ -949,12 +949,6 @@ body {
         height: -100%;
         padding-bottom: 38px;
     }
-
-    /* .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    } */
 
     .main {
         background-color: #060918;
@@ -974,7 +968,7 @@ body {
 
     .logo__text {
         font-size: 18px;
-        margin-right: 6rem;
+        margin-right: 50px;
     }
 
     .logo_lk {

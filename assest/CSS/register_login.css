@@ -190,4 +190,16 @@ a.last__nav {
         margin-left: 14%;
     }
 
+    .right {
+        display: none;
+    }
+
+    .left {
+        width: 100%;
+    }
+
+    .errors-block {
+        width: 80%;
+    }
+
 }

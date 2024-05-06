@@ -6,7 +6,7 @@
         <a href="../index.php" class="logo-link1">
             <p class="logo__text">SkyFactory</p>
         </a>
-
+        
         <div class="footer__section">         
             <div class="footer-column">Популярные разделы</div>
             <ul class="list-unstyled simple-list alint-left">
