@@ -102,9 +102,9 @@
                     </li>
 
                     <? if (!isset($_SESSION['user'])) { ?>
-                        <li class="nav__item lk__mobile">
+                        <li class="nav__item lk__mobile lk_lk_mobile">
                             <img src="assest/img/account.svg" alt="" class="lk_img">
-                            <a href="pages/Register_page.php" class="nav__link lk_link">Личный кабинет</a>
+                            <a href="pages/Register_page.php" class="nav__link lk_link lk_link-li">Личный кабинет</a>
                         </li>
                     <? } elseif ($_SESSION['user']['role'] == '2') { ?>
                         <li class="nav__item admin_link"><a class="nav__link " href="pages/Admin_page.php">Админ-панель</a></li>

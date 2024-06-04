@@ -236,3 +236,53 @@ a.last__nav {
     display: block;
     max-width: 268px;
 }
+
+/* Адаптив корзины */
+@media screen and (max-width: 480px) {
+    .page__title {
+        text-align: center;
+        margin: 0;
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+
+    .cart__mine-info {
+        display: block;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .block__main-cart {
+        display: block;
+    }
+
+    .block__info-cart {
+        display: block;
+        margin: 0;
+    }
+
+    .block_cart-inner {
+        display: block;
+        text-align: center;
+    }
+
+    .title_cart {
+        width: 50%;
+        text-align: center;
+        margin-left: 80px;
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+
+    .block_change-count {
+        margin-left: 90px;
+    }
+
+    .block_price-cart {
+        margin-left: 10px;
+    }
+
+    .block__total_price-cart {
+        max-width: 100%;
+    }
+}

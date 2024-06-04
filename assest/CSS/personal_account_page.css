@@ -325,3 +325,68 @@ a.last__nav {
     color: #FFF;
     margin-top: 20px;
 }
+
+
+/* Адаптив страниц личного кабинета */
+@media screen and (max-width: 480px) {
+    /* Общая информация - ЛК */
+    .page__title {
+        text-align: center;
+        margin-left: 30px;
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+
+    .personal-lk {
+        display: block;
+    }
+
+    .menu {
+        margin-left: 20px;
+        border: none;
+    }
+
+    .content_left {
+        float: none;
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    .personal-lk .general-info {
+        display: block;
+    }
+
+    /* Персональная информация - ЛК */
+    .personal-lk .general-info input {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .personal-lk .general-info1 input {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .personal-form__grid {
+        display: block;
+    }
+
+    .personal-form__button {
+        line-height: 0% !important;
+    }
+
+    .personal-form__cancel {
+        display: block;
+        margin: 0;
+        margin-top: 42px;
+    }
+
+    /* Список заказов - ЛК */
+    .shopping-list {
+        display: block;
+    }
+
+    .card_order {
+        width: 100%;
+    }
+}

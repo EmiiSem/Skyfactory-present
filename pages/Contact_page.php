@@ -77,15 +77,15 @@
             </div>
 
             <div class="container form__contact">
-                <form action="#" method="post">
+                <form action="../include/feedback_contact.php" method="POST">
                     <div class="contact">
                         <p class="contact_name">Имя</p>
-                        <input type="text" class="input-name" placeholder="Имя" required>
+                        <input type="text" name="name" class="input-name" placeholder="Имя">
                     </div>
 
                     <div class="contact">
                         <p class="contact_email">E-mail адрес</p>
-                        <input type="email" class="input-email" placeholder="E-mail адрес">
+                        <input type="email" name="email" class="input-email" placeholder="E-mail адрес">
                     </div>
 
                     <div class="contact">
@@ -93,12 +93,10 @@
                         <textarea name="message" rows="3" placeholder="Введите Ваше сообщение" class="message-text"></textarea>
                     </div>
                     <br>
-                    <a href="#" class="form__btn">
-                        <button type="button" class="btn__item">
-                            <img src="../assest/img/tel.svg" alt="Отправка сообщения" class="tel_btn">
-                            Отправить сообщение
-                        </button>
-                    </a>
+                    <div class="button">
+                        <input type="submit" value="Отправка сообщения" class="btn__item form__btn">
+                        <img src="../assest/img/tel.svg" alt="Отправка сообщения" class="tel_btn form__btn" style="padding-top: 5px">
+                    </div>
                 </form>
             </div>
             <!-- ./form__contact -->
