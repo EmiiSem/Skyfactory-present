@@ -190,7 +190,11 @@ a.last__nav {
     .form__btn {
         text-align: center;
         position: relative;
-        margin-left: 10%;
+        /* margin-left: 10%; */
+    }
+
+    .tel_btn {
+        display: none;
     }
 
     .btn__item {

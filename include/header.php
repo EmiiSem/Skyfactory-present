@@ -69,9 +69,9 @@
                         <li class="nav__item admin_link"><a class="nav__link " href="../pages/Admin_page.php">Админ-панель</a></li>
                         <li class="nav__item admin_link"><a class="nav__link " href="../include/logout.php">Выход</a></li>
                     <? } else { ?>
-                        <li class="nav__item"><a class="nav__link lk_link" href="../include/logout.php">Выход</a></li>
-                        <li class="nav__item"><a class="nav__link lk_link" href="../pages/Personal_accout_page.php">Кабинет</a></li>
-                        <li class="nav__item"><a class="nav__link lk_link" href="../pages/Basket.php">
+                        <li class="nav__item nav__link lk_link"><a href="../include/logout.php">Выход</a></li>
+                        <li class="nav__item nav__link lk_link"><a href="../pages/Personal_accout_page.php">Кабинет</a></li>
+                        <li class="nav__item nav__link lk_link form__lk"><a href="../pages/Basket.php">
                             <button class="cart" id="cart">
                                 <img class="cart__image" src="../assest/img/shopping_cart.svg" alt="Cart" />
                                 <?= $cartNum ?>

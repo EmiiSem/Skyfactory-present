@@ -7,9 +7,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>О компании "SkyFactory"</title>
+    <title>О компании ООО "SkyFactory"</title>
     <meta name="robots" content="">
-    <meta name="description" content="О компании интернет-магазина телескопов SkyFactory.">
+    <meta name="description" content="О компании интернет-магазина телескопов ООО SkyFactory.">
     <link rel="stylesheet" href="../assest/CSS/about_page.css">
     <link rel="stylesheet" href="../assest/CSS/header.css">
     <link rel="stylesheet" href="../assest/CSS/footer.css">
@@ -66,7 +66,7 @@
             </div>
 
             <div class="company__content">
-                <h1 class="company-title">О нашей компании «SkyFactory»</h1>
+                <h1 class="company-title">О нашей компании ООО «SkyFactory»</h1>
             </div>
             <div class="content__text">
                 Мы рады приветствовать Вас в нашем специализированном магазине телескопов и других астрономических товаров.<br>Здесь Вы найдете широчайший выбор телескопов, и принадлежностей к ним, литературы и других сопутствующих товаров, а также получите исчерпывающие и авторитетные консультации по любым вопросам, связанным с астрономией, которые дадут Вам наши консультанты, каждый из которых имеет солидный опыт занятий астрономией.<br><br>

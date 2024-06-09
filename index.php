@@ -110,9 +110,9 @@
                         <li class="nav__item admin_link"><a class="nav__link " href="pages/Admin_page.php">Админ-панель</a></li>
                         <li class="nav__item admin_link"><a class="nav__link " href="include/logout.php">Выход</a></li>
                     <? } else { ?>
-                        <li class="nav__item"><a class="nav__link lk_link" href="include/logout.php">Выход</a></li>
-                        <li class="nav__item"><a class="nav__link lk_link" href="pages/Personal_accout_page.php">Кабинет</a></li>
-                        <li class="nav__item"><a class="nav__link lk_link" href="pages/Basket.php">
+                        <li class="nav__item nav__link lk_link"><a href="include/logout.php">Выход</a></li>
+                        <li class="nav__item nav__link lk_link"><a href="pages/Personal_accout_page.php">Кабинет</a></li>
+                        <li class="nav__item nav__link lk_link form__lk"><a href="pages/Basket.php">
                             <button class="cart" id="cart">
                                 <img class="cart__image" src="assest/img/shopping_cart.svg" alt="Cart" />
                                 <?= $cartNum ?>
@@ -190,11 +190,9 @@
                     <a href="Cart_page.html" class="card__image">
                         <img src="assest/img/Products/cart1.png" alt="Телескоп Veber 360/50 рефрактор в кейсе" title="Телескоп Veber 360/50 рефрактор в кейсе" />
                     </a>
-                    <div class="card__label">-6%</div>
                 </div>
                 <div class="card__bottom">
                     <div class="card__prices">
-                        <div class="card__price card__price--discount">3 840.0</div>
                         <div class="card__price card__price--common">4 339.0</div>
                     </div>
                     <a href="#" class="card__title">Телескоп Veber 360/50 рефрактор в кейсе</a>
@@ -211,11 +209,9 @@
                     <a href="Cart_page.html" class="card__image">
                         <img src="assest/img/Products/cart2.png" alt="Телескоп SVBONY SV502" title="Телескоп SVBONY SV502" />
                     </a>
-                    <div class="card__label">-5%</div>
                 </div>
                 <div class="card__bottom">
                     <div class="card__prices">
-                        <div class="card__price card__price--discount">4 650.0</div>
                         <div class="card__price card__price--common">5 550.0</div>
                     </div>
                     <a href="#" class="card__title">Телескоп SVBONY <br> SV502</a>
@@ -232,11 +228,9 @@
                     <a href="Cart_page.html" class="card__image">
                         <img src="assest/img/Products/cart3.jpg" alt="Телескоп Veber 350x60 Аз рефрактор" title="Телескоп Veber 350x60 Аз рефрактор" />
                     </a>
-                    <div class="card__label">-17%</div>
                 </div>
                 <div class="card__bottom">
                     <div class="card__prices">
-                        <div class="card__price card__price--discount">6 030.0</div>
                         <div class="card__price card__price--common">7 296.0</div>
                     </div>
                     <a href="#" class="card__title">Телескоп Veber 350x60 Аз рефрактор</a>
@@ -253,11 +247,9 @@
                     <a href="Cart_page.html" class="card__image">
                         <img src="assest/img/Products/cart4.jpg" alt="Телескоп Veber УМКА 76/300 рефлектор" title="Телескоп Veber УМКА 76/300 рефлектор" />
                     </a>
-                    <div class="card__label">-14%</div>
                 </div>
                 <div class="card__bottom">
                     <div class="card__prices">
-                        <div class="card__price card__price--discount">6 560.0</div>
                         <div class="card__price card__price--common">7 610.0</div>
                     </div>
                     <a href="#" class="card__title">Телескоп Veber УМКА 76/300 рефлектор</a>
@@ -279,30 +271,36 @@
             </div>
 
             <div class="quastion__items">
-                <div class="quastion_item ">
-                    <img src="assest/img/Quastions/qustion1.png" alt="">
-                    <div class="quastion_item_text">Как выбрать телескоп?</div>
-                </div>
+                <a href="pages/Quastion_page.php">
+                    <div class="quastion_item ">
+                        <img src="assest/img/Quastions/qustion1.png" alt="">
+                        <div class="quastion_item_text">Как выбрать телескоп?</div>
+                    </div>
+                </a>
 
-                <div class="quastion_item ">
-                    <img src="assest/img/Quastions/qustion2.png" alt="">
-                    <div class="quastion_item_text">Что можно наблюдать?</div>
-                </div>
+                <a href="pages/Quastion_page.php">
+                    <div class="quastion_item ">
+                        <img src="assest/img/Quastions/qustion2.png" alt="">
+                        <div class="quastion_item_text">Что можно наблюдать?</div>
+                    </div>
 
-                <div class="quastion_item ">
-                    <img src="assest/img/Quastions/qustion3.png" alt="">
-                    <div class="quastion_item_text">Как пользоваться телескопом?</div>
-                </div>
+                <a href="pages/Quastion_page.php">
+                    <div class="quastion_item ">
+                        <img src="assest/img/Quastions/qustion3.png" alt="">
+                        <div class="quastion_item_text">Как пользоваться телескопом?</div>
+                    </div>
 
-                <div class="quastion_item ">
-                    <img src="assest/img/Quastions/quastion4.png" alt="">
-                    <div class="quastion_item_text">Как не ошибиться в выборе телескопа?</div>
-            </div>
+                <a href="pages/Quastion_page.php">
+                    <div class="quastion_item ">
+                        <img src="assest/img/Quastions/quastion4.png" alt="">
+                        <div class="quastion_item_text">Как не ошибиться в выборе телескопа?</div>
+                    </div>
+                </a>
         </div>
         <!-- ./quastion__items -->
 
         <div class="about__magazine">
-            <h1 class="text_magazine">Магазн телескопов "SkyFactory"</h1>
+            <h1 class="text_magazine">Магазн телескопов ООО "SkyFactory"</h1>
             <div class="text_about">
                 Мы рады приветствовать Вас в нашем специализированном магазине телескопов и аксессуарам к ним.
                 Здесь Вы найдете широчайший выбор телескопов, и принадлежностей к ним, литературы и других сопутствующих товаров, а также получите
