@@ -59,7 +59,7 @@
                     <li><a href="../index.php" title="Главная">
                         <span>Главная</span>
                     </a></li>
-                    <li><a href="#" title="Полезные статьи">
+                    <li><a href="Quastion_all.php" title="Полезные статьи">
                         <span>Полезные статьи</span>
                     </a></li>
                     <li><a href="#" title="Как выбрать подходящий телескоп" class="last__nav">

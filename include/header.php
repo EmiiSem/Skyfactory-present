@@ -43,7 +43,7 @@
                               <li><a class="menu__item" href="../index.php">Главная</a></li>
                               <li><a class="menu__item" href="../pages/Catalog_page.php">Каталог товаров</a></li>
                               <li><a class="menu__item" href="../pages/Reviews_page.php">Отзывы</a></li>
-                              <li><a class="menu__item" href="../pages/Quastion_page.php">Часто задаваемые вопросы</a></li>
+                              <li><a class="menu__item" href="../pages/Quastion_all.php">Часто задаваемые вопросы</a></li>
                               <li><a class="menu__item" href="../pages/Contact_page.php">Контакты</a></li>
                               <li><a class="menu__item" href="../pages/About__page.php">О SkyFactory</a></li>
                             </ul>

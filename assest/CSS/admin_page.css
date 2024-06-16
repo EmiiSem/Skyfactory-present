@@ -61,7 +61,8 @@ a.last__nav {
 .main {
     background-color: #060918;
     padding-top: 18px;
-    height: 100%;
+    padding-bottom: 18px;
+    min-height: calc(100vh - 144px - 341.39px);
 }
 
 /* Главная часть админки */

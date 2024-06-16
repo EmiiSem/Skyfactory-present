@@ -311,7 +311,7 @@ body {
 
 .main {
     background-color: #060918;
-    height: 1800px;
+    min-height: calc(100vh - 144px - 341.39px);
     padding-top: 18px;
 }
 

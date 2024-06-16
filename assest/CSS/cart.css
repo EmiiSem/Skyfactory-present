@@ -55,8 +55,8 @@ a.last__nav {
     background-color: #060918;
     padding-top: 18px;
     padding-bottom: 50px;
-    /* height: 100%; */
-    height: 1000px;
+    padding-bottom: 18px;
+    min-height: calc(100vh - 144px - 341.39px);
 }
 
 .cart__mine-info {

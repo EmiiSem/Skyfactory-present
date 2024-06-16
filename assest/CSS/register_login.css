@@ -58,12 +58,8 @@ a.last__nav {
 .main {
     background-color: #060918;
     padding-top: 18px;
-    padding-bottom: 50px;
-    height: 100%;
-}
-
-.main2 {
-    height: 600px;
+    padding-bottom: 18px;
+    min-height: calc(100vh - 144px - 341.39px);
 }
 
 .message {

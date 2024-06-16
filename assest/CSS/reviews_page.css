@@ -274,7 +274,8 @@ a.last__nav {
 .main {
     background-color: #060918;
     padding-top: 18px;
-    padding-bottom: 50px;
+    padding-bottom: 18px;
+    min-height: calc(100vh - 144px - 341.39px);
 }
 
 /* Адаптив */
